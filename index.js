@@ -281,7 +281,7 @@ async function handleRequest(request) {
 
   // Admin user homepage.
   if (password_value_admin && path == password_value_admin) {
-    let index = await fetch("https://cdn.jsdelivr.net/gh/Monopink/Url-Shorten-Worker" + repo_version + "/" + theme_admin + "/index.html")
+    let index = await fetch("https://fastly.jsdelivr.net/gh/Monopink/Url-Shorten-Worker" + repo_version + "/" + theme_admin + "/index.html")
     index = await index.text()
     index = index.replaceAll(/__REPO_VERSION__/gm, repo_version)
     index = index.replaceAll(/__PASSWORD__/gm, path)
@@ -294,7 +294,7 @@ async function handleRequest(request) {
 
   // Guest user homepage.
   if ((!path && !password_value) || path == password_value) {
-    let index = await fetch("https://cdn.jsdelivr.net/gh/Monopink/Url-Shorten-Worker" + repo_version + "/" + theme + "/index.html")
+    let index = await fetch("https://fastly.jsdelivr.net/gh/Monopink/Url-Shorten-Worker" + repo_version + "/" + theme + "/index.html")
     index = await index.text()
     index = index.replaceAll(/__REPO_VERSION__/gm, repo_version)
     index = index.replaceAll(/__PASSWORD__/gm, path)
